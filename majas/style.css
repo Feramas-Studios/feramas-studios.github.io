@@ -1,0 +1,47 @@
+:root {
+    --primary: #0066ff;
+    --secondary: #00cc99;
+    --dark: #111122;
+    --light: #f8f9fa;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background: var(--dark);
+    color: var(--light);
+    line-height: 1.6;
+}
+
+.main-header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+}
+
+.logo {
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.service-card {
+    background: rgba(255,255,255,0.1);
+    padding: 1.5rem;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.live-status {
+    padding: 2rem;
+    background: rgba(0,0,0,0.2);
+}
