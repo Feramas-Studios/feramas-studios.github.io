@@ -1,44 +1,224 @@
 <!DOCTYPE html>
 <html lang="lv">
 <head>
+    <!-- Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Feramas Studios</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Feramas Studios - Jaunākās spēles no Latvijas top izstrādātājiem kopš 2025">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Feramas Studios | Nākamās paaudzes spēļu izstrāde">
+    <meta property="og:image" content="https://feramas-studios.github.io/majas/images/social-preview.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    
+    <!-- CSS & Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/css/splide.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/dark-mode.css">
+    
+    <title>Feramas Studios | Nākamās paaudzes spēļu izstrāde</title>
 </head>
-<body>
-    <header class="main-header">
-        <img src="images/logo.png" alt="Feramas Studios Logo" class="logo">
-        <h1>FERAMAS STUDIOS</h1>
-        <p>Digitālie risinājumi nākotnei</p>
-    </header>
 
-    <nav class="main-nav">
-        <a href="#pakalpojumi">Pakalpojumi</a>
-        <a href="#projekti">Projekti</a>
-        <a href="#par-mums">Par mums</a>
-        <a href="#kontakti">Kontakti</a>
+<body class="dark-mode">
+    <!-- 3D Navigation Hologram -->
+    <div id="nav-hologram"></div>
+    
+    <!-- Augšējā navigācijas josla -->
+    <nav class="cyber-nav">
+        <div class="studio-logo">
+            <img src="images/logo-animated.svg" alt="Feramas Studios" id="holographic-logo">
+        </div>
+        
+        <div class="nav-links">
+            <a href="#games" data-tooltip="Mūsu Spēles"><i class="icon-gamepad"></i></a>
+            <a href="#devlog" data-tooltip="DevLogs"><i class="icon-code"></i></a>
+            <a href="#careers" data-tooltip="Karjera"><i class="icon-team"></i></a>
+            <a href="#tech" data-tooltip="Tehnoloģijas"><i class="icon-gear"></i></a>
+        </div>
+        
+        <div class="nav-actions">
+            <button id="theme-toggle" aria-label="Tēmas pārslēgšana"></button>
+            <button id="language-switcher">LV/EN</button>
+        </div>
     </nav>
 
-    <main>
-        <section id="pakalpojumi" class="service-grid">
-            <div class="service-card">
-                <h3>Web izstrāde</h3>
-                <p>Mūsdienīgas tīmekļa vietnes</p>
+    <!-- Hero Sekcija ar ParticleJS -->
+    <section class="hero" id="particles-js">
+        <div class="hero-content">
+            <h1 class="glitch" data-text="FERAMAS STUDIOS">FERAMAS STUDIOS</h1>
+            <p class="subtitle">Redzēt nākotni. Radīt nākotni.</p>
+            
+            <div class="hero-buttons">
+                <button class="cyber-btn primary" id="watch-trailer">
+                    <span class="btn-hologram"></span>
+                    Skatīt Jaunāko Traileri
+                </button>
+                
+                <button class="cyber-btn secondary" id="join-discord">
+                    <i class="icon-discord"></i>
+                    Pievienojies Discord
+                </button>
             </div>
-            <!-- Vēl 3 pakalpojumu kārtis -->
-        </section>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="mouse"></div>
+        </div>
+    </section>
 
-        <section id="status" class="live-status">
-            <h2>Sistēmas statuss</h2>
-            <div id="status-container"></div>
-        </section>
-    </main>
+    <!-- Spēļu Katalogs (Splide Carousel) -->
+    <section id="games" class="game-showcase">
+        <h2 class="section-title">Mūsu Spēles</h2>
+        
+        <div class="splide" id="game-carousel">
+            <div class="splide__track">
+                <ul class="splide__list">
+                    <li class="splide__slide">
+                        <div class="game-card" data-game="neon-drifter">
+                            <div class="game-badge">Jauns!</div>
+                            <div class="game-thumbnail"></div>
+                            <div class="game-info">
+                                <h3>Neon Drifter</h3>
+                                <div class="game-meta">
+                                    <span class="genre">Racing MMO</span>
+                                    <span class="release">Q3 2025</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <!-- Vairākas spēles -->
+                </ul>
+            </div>
+        </div>
+    </section>
 
-    <footer>
-        <p>© 2023 Feramas Studios</p>
+    <!-- Live DevStream Sadaļa -->
+    <section id="devlog" class="stream-section">
+        <div class="stream-container">
+            <div class="stream-player" id="twitch-embed"></div>
+            
+            <div class="stream-schedule">
+                <h3>Straumēšanas Grafiks</h3>
+                <ul class="schedule-list">
+                    <li>
+                        <span class="day">Nekad</span>
+                        <span class="time">18:00-20:00</span>
+                        <span class="topic">Void Sentinels AI Programmēšana</span>
+                    </li>
+                    <!-- Citi dienu grafiki -->
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Komandas Sadaļa ar 3D Kartēm -->
+    <section id="team" class="team-section">
+        <h2 class="section-title">Meet The Team</h2>
+        
+        <div class="team-grid" id="team-holograms">
+            <!-- Komandas locekļi tiks ielādēti dinamiski -->
+        </div>
+    </section>
+
+    <!-- Karjeras Dashboard -->
+    <section id="careers" class="careers-section">
+        <div class="careers-header">
+            <h2>Pievienojies Mūsu Komandai</h2>
+            <p>Meklējam talantīgus spēļu izstrādātājus!</p>
+        </div>
+        
+        <div class="positions-filter">
+            <button class="filter-btn active" data-department="all">Visi</button>
+            <button class="filter-btn" data-department="programming">Programmēšana</button>
+            <button class="filter-btn" data-department="art">Māksla</button>
+            <button class="filter-btn" data-department="design">Dizains</button>
+        </div>
+        
+        <div class="positions-grid" id="job-positions">
+            <!-- Darba pozīcijas tiks ielādētas dinamiski -->
+        </div>
+    </section>
+
+    <!-- Kontaktu Forma ar Web3 -->
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Sazinies ar Mums(Nav Gatavs)</h3>
+                <address>
+                    <p><i class="icon-location"></i> Latvija</p>
+                    <p><i class="icon-email"></i> </p>
+                    <p><i class="icon-phone"></i> /p>
+                </address>
+                
+                <div class="crypto-address">
+                    <h4>Atbalsti Mūsu Darbu</h4>
+                    <div class="wallet-address">
+                        <span>ETH:</span>
+                        <code id="eth-address">0x71C7656EC7ab88b098defB751B7401B5f6d8976F</code>
+                        <button class="copy-btn" data-target="eth-address">
+                            <i class="icon-copy"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <form id="contact-form" class="cyber-form">
+                <div class="form-group">
+                    <label for="name">Vārds</label>
+                    <input type="text" id="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-pasts</label>
+                    <input type="email" id="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Ziņa</label>
+                    <textarea id="message" rows="5" required></textarea>
+                </div>
+                
+                <div class="form-actions">
+                    <button type="submit" class="cyber-btn">
+                        <span class="btn-glitch"></span>
+                        Nosūtīt
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer ar Sociālajiem Tīkliem -->
+    <footer class="cyber-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="images/logo-mini.svg" alt="Feramas Studios">
+                <p>© 2025 Feramas Studios. Visas tiesības aizsargātas.</p>
+            </div>
+            
+            <div class="social-links">
+                <a href="#" aria-label="Twitter"><i class="icon-twitter"></i></a>
+                <a href="#" aria-label="YouTube"><i class="icon-youtube"></i></a>
+                <a href="#" aria-label="Discord"><i class="icon-discord"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="icon-linkedin"></i></a>
+            </div>
+            
+            <div class="legal-links">
+                <a href="#">Privātuma Politika</a>
+                <a href="#">Lietošanas Noteikumi</a>
+                <a href="#">Cookie Iestatījumi</a>
+            </div>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4.1.4/dist/js/splide.min.js"></script>
+    <script src="https://embed.twitch.tv/embed/v1.js"></script>
+    <script src="js/three.min.js"></script>
+    <script src="js/particles.min.js"></script>
+    <script src="js/main.js" type="module"></script>
 </body>
 </html>
