@@ -1,0 +1,14 @@
+{
+    "services": [
+        {
+            "name": "Web hosting",
+            "status": "online",
+            "responseTime": 24
+        },
+        {
+            "name": "Game servers",
+            "status": "online",
+            "responseTime": 42
+        }
+    ]
+}
